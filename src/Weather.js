@@ -89,7 +89,8 @@ function Weather() {
 
   useEffect(() => {
     if (latitude !== null && longitude !== null) {
-      const s_url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=fe1fdc5f99b46096b24b1b166f5f6894&units=metric`;
+      const api_key = ""; {/*Get your free Api Key from Open Weather API*/}
+      const s_url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
       axios.get(s_url)
         .then(res => {
 	  console.log(res.data);
@@ -107,7 +108,8 @@ function Weather() {
 
   useEffect(() => {
     if (latitude !== null && longitude !== null) {
-      const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=fe1fdc5f99b46096b24b1b166f5f6894&units=metric`;
+      const api_key = ""; {/*Get your free Api Key from Open Weather API*/}
+      const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
       axios.get(url2)
         .then(res => {
           var time = new Date().getHours();
@@ -202,7 +204,8 @@ function Weather() {
 		getRealWeather_4days();
 	}
   const getRealWeather = () => {
-    const s_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fe1fdc5f99b46096b24b1b166f5f6894&units=metric`;
+    const api_key = ""; {/*Get your free Api Key from Open Weather API*/}	
+    const s_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
     axios.get(s_url)
       .then(res => {
         const icon = iconMapping[res.data.weather[0].icon];
@@ -218,7 +221,8 @@ function Weather() {
   };
 	
   const getRealWeather_4days = () => {
-    const url2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=fe1fdc5f99b46096b24b1b166f5f6894&units=metric`;
+    const api_key = ""; {/*Get your free Api Key from Open Weather API*/}
+    const url2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=metric`;
     axios.get(url2)
       .then(res => {
         var time = new Date().getHours();
